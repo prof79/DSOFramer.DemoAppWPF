@@ -3,6 +3,7 @@ using System.Resources;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Windows.Media;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -40,6 +41,9 @@ using System.Windows;
                                               // app, or any theme specific resource dictionaries)
 )]
 
+// Enable custom manipulation of DPI-awareness settings
+// (eg. Win32 API calls of SetProcessDpiAwareness)
+[assembly: DisableDpiAwareness]
 
 // Version information for an assembly consists of the following four values:
 //

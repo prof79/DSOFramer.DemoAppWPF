@@ -80,6 +80,7 @@
     <Compile Include="DsoOffice.designer.cs">
       <DependentUpon>DsoOffice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interop.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
