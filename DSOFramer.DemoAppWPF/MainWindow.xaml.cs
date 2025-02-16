@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms.Integration;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿// MainWindow.xaml.cs
 
-namespace DocumentTest
+namespace DSOFramer.DemoAppWPF
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Data;
+    using System.Windows.Documents;
+    using System.Windows.Forms.Integration;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Imaging;
+    using System.Windows.Navigation;
+    using System.Windows.Shapes;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,6 +27,7 @@ namespace DocumentTest
         public MainWindow()
         {
             InitializeComponent();
+
             this.Loaded += MainWindow_Loaded;
         }
 
@@ -35,9 +38,11 @@ namespace DocumentTest
             System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
             dsoOffice = new DsoOffice();
             dsoOffice.Dock = System.Windows.Forms.DockStyle.Fill;
+
             panel.Controls.Add(dsoOffice);
 
             host.Child = panel;
+
             gridOffice.Children.Add(host);
         }
 
@@ -49,16 +54,20 @@ namespace DocumentTest
         private void OpenWord_Click(object sender, RoutedEventArgs e)
         {
             var ofd = new System.Windows.Forms.OpenFileDialog();
+            
             ofd.Filter = "*.doc|*.doc|*.docx|*.docx";
             ofd.Multiselect = false;
+
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var filename = ofd.FileName;
+
                 if( dsoOffice ==null)
                 {
                     MessageBox.Show("控件异常");
                     return;
                 }
+
                 dsoOffice.OpenDocument(filename);
             }
         }
@@ -66,11 +75,14 @@ namespace DocumentTest
         private void OpenExcel_Click(object sender, RoutedEventArgs e)
         {
             var ofd = new System.Windows.Forms.OpenFileDialog();
+
             ofd.Filter = "*.xls|*.xls|*.xlsx|*.xlsx";
             ofd.Multiselect = false;
+
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var filename = ofd.FileName;
+
                 dsoOffice.OpenDocument(filename);
             }
         }

@@ -1,19 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿// DsoOffice.cs
 
-namespace DocumentTest
+namespace DSOFramer.DemoAppWPF
 {
-    //2.2版本
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Data;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+
+    // 2.2 版本
     public partial class DsoOffice : UserControl
     {
         private AxDSOFramer.AxFramerControl dso = new AxDSOFramer.AxFramerControl();
+
         public DsoOffice()
         {
             InitializeComponent();

@@ -1,7 +1,7 @@
-﻿<Application x:Class="DSOOffice.App"
+﻿<Application x:Class="DSOFramer.DemoAppWPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:DSOOffice"
+             xmlns:local="clr-namespace:DSOFramer.DemoAppWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

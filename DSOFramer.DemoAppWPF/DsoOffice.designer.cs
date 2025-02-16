@@ -1,4 +1,6 @@
-﻿namespace DocumentTest
+﻿// DsoOffice.designer.cs
+
+namespace DSOFramer.DemoAppWPF
 {
     partial class DsoOffice
     {
