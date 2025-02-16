@@ -4,16 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:DSOFramer.DemoAppWPF"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="文档编辑"
+        Title="DSOFramer Document Editing"
         Width="800"
         Height="600"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d">
+
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5,5" />
         </Style>
     </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -21,23 +23,32 @@
         </Grid.RowDefinitions>
 
         <StackPanel Margin="0,5" Orientation="Horizontal">
-            <Border BorderBrush="Red" BorderThickness="1">
+
+            <Border BorderBrush="DarkBlue"
+                    BorderThickness="2">
+
                 <StackPanel Orientation="Horizontal">
-                    <Button Click="OpenWord_Click" Content="Word" />
-                    <Button Click="SaveWord_Click" Content="保存Word" />
+                    <Button Click="OpenWord_Click" Content="Open Word" />
+                    <Button Click="SaveWord_Click" Content="Save Word" />
                 </StackPanel>
+
             </Border>
 
             <Border Margin="5,0,0,0"
-                    BorderBrush="Red"
-                    BorderThickness="1">
+                    BorderBrush="DarkGreen"
+                    BorderThickness="2">
+
                 <StackPanel Orientation="Horizontal">
-                    <Button Click="OpenExcel_Click" Content="Excel" />
-                    <Button Click="SaveExcel_Click" Content="保存Excel" />
+                    <Button Click="OpenExcel_Click" Content="Open Excel" />
+                    <Button Click="SaveExcel_Click" Content="Save Excel" />
                 </StackPanel>
+
             </Border>
+
         </StackPanel>
 
         <Grid Name="gridOffice" Grid.Row="1" />
+
     </Grid>
+
 </Window>

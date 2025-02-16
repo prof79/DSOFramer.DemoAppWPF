@@ -2,20 +2,8 @@
 
 namespace DSOFramer.DemoAppWPF
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
     using System.Windows.Forms.Integration;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -35,8 +23,10 @@ namespace DSOFramer.DemoAppWPF
         {
             WindowsFormsHost host = new WindowsFormsHost();
 
-            System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
+            var panel = new System.Windows.Forms.Panel();
+
             dsoOffice = new DsoOffice();
+
             dsoOffice.Dock = System.Windows.Forms.DockStyle.Fill;
 
             panel.Controls.Add(dsoOffice);
@@ -55,16 +45,22 @@ namespace DSOFramer.DemoAppWPF
         {
             var ofd = new System.Windows.Forms.OpenFileDialog();
             
-            ofd.Filter = "*.doc|*.doc|*.docx|*.docx";
+            ofd.Filter = "Microsoft Word Files|*.doc?";
             ofd.Multiselect = false;
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var filename = ofd.FileName;
 
-                if( dsoOffice ==null)
+                if( dsoOffice == null)
                 {
-                    MessageBox.Show("控件异常");
+                    MessageBox.Show(
+                        "Office embedding control could not be loaded.",
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Error
+                    );
+
                     return;
                 }
 
@@ -76,12 +72,19 @@ namespace DSOFramer.DemoAppWPF
         {
             var ofd = new System.Windows.Forms.OpenFileDialog();
 
-            ofd.Filter = "*.xls|*.xls|*.xlsx|*.xlsx";
+            ofd.Filter = "Microsoft Excel Files|*.xls?";
             ofd.Multiselect = false;
 
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var filename = ofd.FileName;
+
+                MessageBox.Show(
+                    "Office embedding control could not be loaded.",
+                    "Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
 
                 dsoOffice.OpenDocument(filename);
             }
