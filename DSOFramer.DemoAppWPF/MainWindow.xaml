@@ -24,23 +24,12 @@
 
         <StackPanel Margin="0,5" Orientation="Horizontal">
 
-            <Border BorderBrush="DarkBlue"
+            <Border BorderBrush="Orchid"
                     BorderThickness="2">
 
                 <StackPanel Orientation="Horizontal">
-                    <Button Click="OpenWord_Click" Content="Open Word" />
-                    <Button Click="SaveWord_Click" Content="Save Word" />
-                </StackPanel>
-
-            </Border>
-
-            <Border Margin="5,0,0,0"
-                    BorderBrush="DarkGreen"
-                    BorderThickness="2">
-
-                <StackPanel Orientation="Horizontal">
-                    <Button Click="OpenExcel_Click" Content="Open Excel" />
-                    <Button Click="SaveExcel_Click" Content="Save Excel" />
+                    <Button Click="OpenDocument_Click" Content="Open Document" />
+                    <Button Click="SaveDocument_Click" Content="Save Document" />
                 </StackPanel>
 
             </Border>
