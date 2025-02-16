@@ -27,4 +27,5 @@ If necessary, you can update the ActiveX/Typelib interop libraries following the
 
 * <https://stackoverflow.com/questions/4075802/creating-a-dpi-aware-application>
 * <https://learn.microsoft.com/en-us/windows/win32/hidpi/setting-the-default-dpi-awareness-for-a-process>
+* WPF-specific info: <https://learn.microsoft.com/en-us/windows/win32/hidpi/declaring-managed-apps-dpi-aware>
  
